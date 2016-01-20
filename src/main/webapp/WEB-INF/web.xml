@@ -1,15 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-		 xmlns="http://java.sun.com/xml/ns/javaee" 
-		 xmlns:web="http://java.sun.com/xml/ns/javaee" 
-		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-		 id="WebApp_ID" version="3.0">
-  <servlet>
-    <servlet-name>HelloWorld</servlet-name>
-    <servlet-class>net.netease.HelloWorld</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>HelloWorld</servlet-name>
-    <url-pattern>/HelloWorld</url-pattern>
-  </servlet-mapping>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<servlet>
+		<servlet-name>HelloWorld</servlet-name>
+		<servlet-class>net.netease.HelloWorld</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Post</servlet-name>
+		<servlet-class>net.netease.Post</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Refresh</servlet-name>
+		<servlet-class>net.netease.Refresh</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>showError</servlet-name>
+		<servlet-class>net.netease.showError</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>HelloWorld</servlet-name>
+		<url-pattern>/HelloWorld</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Post</servlet-name>
+		<url-pattern>/Post</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Refresh</servlet-name>
+		<url-pattern>/Refresh</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>showError</servlet-name>
+		<url-pattern>/showError</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>LogFilter</filter-name>
+		<filter-class>LogFilter</filter-class>
+		<init-param>
+			<param-name>test-param</param-name>
+			<param-value>Initialization Paramter</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>AuthenFilter</filter-name>
+		<filter-class>AuthenFilter</filter-class>
+		<init-param>
+			<param-name>test-param</param-name>
+			<param-value>Initialization Paramter</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LogFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>AuthenFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
 </web-app>

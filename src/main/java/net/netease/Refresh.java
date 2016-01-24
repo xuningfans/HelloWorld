@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Refresh extends HttpServlet {
 	private static final long serialVersionUID = 3720312748756586649L;
@@ -17,12 +18,14 @@ public class Refresh extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 设置刷新自动加载时间为 5 秒
-	      response.setIntHeader("Refresh", 5);
+	      response.setIntHeader("Refresh", 1);
 	 
 	      // 设置响应内容类型
 	      response.setCharacterEncoding("UTF-8");
 	      response.setContentType("text/html;charset=UTF-8");
-	 
+	      HttpSession session = request.getSession();
+	      session.setAttribute("Test", "123");
+	      
 	      // Get current time
 	      Calendar calendar = new GregorianCalendar();
 	      String am_pm;

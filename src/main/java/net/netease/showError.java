@@ -9,6 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 
 public class showError extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest reuquest, HttpServletResponse response) throws ServletException, IOException {
 		response.sendError(407, "Need authentication!!!");

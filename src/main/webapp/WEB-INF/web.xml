@@ -1,97 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	id="WebApp_ID" version="3.0">
-	
-	<filter>
-		<filter-name>MyFilter</filter-name>
-		<filter-class>net.filter.MyFilter</filter-class>
-		<init-param>
-			<param-name>test-param</param-name>
-			<param-value>Initialization Paramter</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>MyFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
-	
-	
-	<servlet>
-		<servlet-name>HelloWorld</servlet-name>
-		<servlet-class>net.netease.HelloWorld</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>Post</servlet-name>
-		<servlet-class>net.netease.Post</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>Refresh</servlet-name>
-		<servlet-class>net.netease.Refresh</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>showError</servlet-name>
-		<servlet-class>net.netease.showError</servlet-class>
-	</servlet>
-	<servlet>
-		<servlet-name>HelloForm</servlet-name>
-		<servlet-class>net.netease.HelloForm</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>HelloWorld</servlet-name>
-		<url-pattern>/HelloWorld</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Post</servlet-name>
-		<url-pattern>/Post</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Refresh</servlet-name>
-		<url-pattern>/Refresh</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>showError</servlet-name>
-		<url-pattern>/showError</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>HelloForm</servlet-name>
-		<url-pattern>/HelloForm</url-pattern>
-	</servlet-mapping>
-	<!-- <servlet>
-		<servlet-name>ErrorHandler</servlet-name>
-		<servlet-class>net.netease.ErrorHandler</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>ErrorHandler</servlet-name>
-		<url-pattern>/ErrorHandler</url-pattern>
-	</servlet-mapping>
-	<error-page>
-		<error-code>404</error-code>
-		<location>/ErrorHandler</location>
-	</error-page>
-	<error-page>
-		<error-code>403</error-code>
-		<location>/ErrorHandler</location>
-	</error-page>
-	<error-page>
-		<exception-type>javax.servlet.ServletException</exception-type>
-		<location>/ErrorHandler</location>
-	</error-page>
-	<error-page>
-		<exception-type>java.io.IOException</exception-type>
-		<location>/ErrorHandler</location>
-	</error-page> -->
-
-	
-	<listener>
-		<listener-class>net.listener.MyservletRequestListener</listener-class>
-	</listener>
-	<listener>
-		<listener-class>net.listener.MySessionListener</listener-class>
-	</listener>
-	<listener>
-		<listener-class>net.listener.MyServletContextListener</listener-class>
-	</listener>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  
+   <servlet>
+    <servlet-name>DeleteCookies</servlet-name>
+    <servlet-class>net.netease.DeleteCookies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCookies</servlet-name>
+    <url-pattern>/DeleteCookies</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>net.netease.HelloWorld</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/HelloWorld</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Post</servlet-name>
+    <servlet-class>net.netease.Post</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Post</servlet-name>
+    <url-pattern>/Post</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Refresh</servlet-name>
+    <servlet-class>net.netease.Refresh</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Refresh</servlet-name>
+    <url-pattern>/Refresh</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>showError</servlet-name>
+    <servlet-class>net.netease.showError</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showError</servlet-name>
+    <url-pattern>/showError</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>HelloForm</servlet-name>
+    <servlet-class>net.netease.HelloForm</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloForm</servlet-name>
+    <url-pattern>/HelloForm</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ErrorHandler</servlet-name>
+    <servlet-class>net.netease.ErrorHandler</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ErrorHandler</servlet-name>
+    <url-pattern>/ErrorHandler</url-pattern>
+  </servlet-mapping>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/ErrorHandler</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/ErrorHandler</location>
+  </error-page>
+  <error-page>
+    <exception-type>javax.servlet.ServletException</exception-type>
+    <location>/ErrorHandler</location>
+  </error-page>
+  <error-page>
+    <exception-type>java.io.IOException</exception-type>
+    <location>/ErrorHandler</location>
+  </error-page>
+  <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>net.filter.MyFilter</filter-class>
+    <init-param>
+      <param-name>test-param</param-name>
+      <param-value>Initialization Paramter</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <listener-class>net.listener.MyservletRequestListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>net.listener.MySessionListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>net.listener.MyServletContextListener</listener-class>
+  </listener>
 </web-app>

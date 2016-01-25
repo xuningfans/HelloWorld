@@ -20,7 +20,7 @@ public class MyFilter implements Filter {
             ServletException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        response.setContentType("text/html;charset=UTF-8");
+        //response.setContentType("text/html;charset=UTF-8");
         filterChain.doFilter(request, response);
         
     }
